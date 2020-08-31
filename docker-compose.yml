@@ -1,0 +1,12 @@
+version: "3"
+services:
+  db:
+    image: rethinkdb:2.3.6
+    ports:
+      - 8080:8080
+  app:
+    build: ./
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./:/app
